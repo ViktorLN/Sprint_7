@@ -1,5 +1,9 @@
 package main;
 
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
 public class CreateOrder {
 
     private String firstName;
@@ -97,5 +101,12 @@ public class CreateOrder {
 
     public void setColor(String [] color) {
         this.color = color;
+    }
+
+    public static Response createOrderRequest(CreateOrder createOrder){
+        return given()
+                .header("Content-type", "application/json")
+                .and().body(createOrder)
+                .when().post("/api/v1/orders");
     }
 }

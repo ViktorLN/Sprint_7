@@ -26,19 +26,11 @@ public class CreateCourierTest {
     public void createCourierTest(){
         CreateCourier createCourier = new CreateCourier("ViktorL","12345","Viktor");
 
-        // Создаем курьера
-       given()
-                .header("Content-type", "application/json")
-                .and().body(createCourier)
-                .when().post("/api/v1/courier");
-
+       Response createCourierRequest = CreateCourier.createCourierRequest(createCourier);
+       Response logInCourierRequest = LogInCourier.logInRequest
+               (new LogInCourier("ViktorL","12345"));
+        Id id = logInCourierRequest.body().as(Id.class);
        // Проверяем наличие курьера по ID
-        Id id = given()
-                .header("Content-type", "application/json")
-                .and().body(new LogInCourier("ViktorL","12345"))
-                .when().post("/api/v1/courier/login")
-                .body().as(Id.class);
-
         MatcherAssert.assertThat(id.getId(), notNullValue());
     }
 
@@ -49,25 +41,16 @@ public class CreateCourierTest {
         CreateCourier createCourier2 = new CreateCourier("ViktorL","1234567","Viktor");
 
         // Создаем пользователя с ником ViktorL
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourier)
-                .when().post("/api/v1/courier");
+        Response createCourierRequest = CreateCourier.createCourierRequest(createCourier);
 
         // Создаем ещё одного пользователя с ником ViktorL но другим паролем
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourier2)
-                .when().post("/api/v1/courier");
+        Response createSecondCourierRequest = CreateCourier.createCourierRequest(createCourier2);
 
         // Проверяем что второй пользователь не создался
-        given()
-                .header("Content-type", "application/json")
-                .and().body(new LogInCourier("ViktorL","1234567"))
-                .when().post("/api/v1/courier/login")
-                .then().statusCode(404);
+        Response logInCourierRequest = LogInCourier.logInRequest
+                (new LogInCourier("ViktorL","1234567"));
+        logInCourierRequest.then().statusCode(404);
     }
-
 
     @DisplayName("Checking all required fields")
     @Test
@@ -78,56 +61,38 @@ public class CreateCourierTest {
         CreateCourier createCourierWithoutLoginPassword = new CreateCourier("","","");
 
         // Отправляем запросы на создание пользвателей
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourierWithoutLogin)
-                .when().post("/api/v1/courier");
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourierWithoutPassword)
-                .when().post("/api/v1/courier");
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourierWithoutLoginPassword)
-                .when().post("/api/v1/courier");
+        Response createCourierRequest = CreateCourier.createCourierRequest(createCourierWithoutLogin);
+        Response createSecondCourierRequest = CreateCourier.createCourierRequest(createCourierWithoutPassword);
+        Response createThirdCourierRequest = CreateCourier.createCourierRequest(createCourierWithoutLoginPassword);
 
         // Проверяем что пользвателей нет
-        given()
-                .header("Content-type", "application/json")
-                .and().body(new LogInCourier("","12345"))
-                .when().post("/api/v1/courier/login")
-                .then().statusCode(400);
-        given()
-                .header("Content-type", "application/json")
-                .and().body(new LogInCourier("ViktorL",""))
-                .when().post("/api/v1/courier/login")
-                .then().statusCode(400);
-        given()
-                .header("Content-type", "application/json")
-                .and().body(new LogInCourier("",""))
-                .when().post("/api/v1/courier/login")
-                .then().statusCode(400);
+        Response logInCourierWithoutLoginRequest = LogInCourier.logInRequest
+                (new LogInCourier("","12345"));
+        logInCourierWithoutLoginRequest.then().statusCode(400);
+
+        Response logInCourierWithoutPasswordRequest = LogInCourier.logInRequest
+                (new LogInCourier("ViktorL",""));
+        logInCourierWithoutPasswordRequest.then().statusCode(400);
+
+        Response logInCourierWithoutLoginPasswordRequest = LogInCourier.logInRequest
+                (new LogInCourier("",""));
+        logInCourierWithoutLoginPasswordRequest.then().statusCode(400);
     }
 
     @DisplayName("Checking for a response code")
     @Test
     public void check201ResponseCode(){
         CreateCourier createCourier = new CreateCourier("ViktorL","12345","Viktor");
-            given()
-                        .header("Content-type", "application/json")
-                        .and().body(createCourier)
-                        .when().post("/api/v1/courier").then().statusCode(201);
+        Response createCourierRequest = CreateCourier.createCourierRequest(createCourier);
+        createCourierRequest.then().statusCode(201);
     }
 
     @DisplayName("Checking response body")
     @Test
     public void checkBodyContainTrue(){
         CreateCourier createCourier = new CreateCourier("ViktorL","12345","Viktor");
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourier)
-                .when().post("/api/v1/courier")
-                .then().assertThat().body("ok",equalTo(true));
+        Response createCourierRequest = CreateCourier.createCourierRequest(createCourier);
+        createCourierRequest.then().assertThat().body("ok",equalTo(true));
     }
 
     @DisplayName("Checking error body if one of fields is missing")
@@ -135,25 +100,13 @@ public class CreateCourierTest {
     public void checkErrorWhenOneFieldIsNull(){
         String errorMessage = "Недостаточно данных для создания учетной записи";
         CreateCourier createCourierWithOutLogin = new CreateCourier("ViktorL",null,"Viktor");
-        CreateCourier createCourierWithOutPassword = new CreateCourier("null","12345","Viktor");
+        CreateCourier createCourierWithOutPassword = new CreateCourier(null,"12345","Viktor");
 
-        Response responseForLogin =
-                given()
-                        .header("Content-type", "application/json")
-                        .and().body(createCourierWithOutLogin)
-                        .when().post("/api/v1/courier");
+        Response createCourierRequest = CreateCourier.createCourierRequest(createCourierWithOutLogin);
+        createCourierRequest.then().assertThat().body("message",equalTo(errorMessage));
 
-        responseForLogin.then().assertThat().body("message",equalTo(errorMessage));
-
-        Response responseForPassword =
-                given()
-                        .header("Content-type", "application/json")
-                        .and().body(createCourierWithOutPassword)
-                        .when().post("/api/v1/courier");
-
-        responseForPassword.then().assertThat().body("message",equalTo(errorMessage));
-
-
+        Response createSecondCourierRequest = CreateCourier.createCourierRequest(createCourierWithOutLogin);
+        createSecondCourierRequest.then().assertThat().body("message",equalTo(errorMessage));
     }
 
     @DisplayName("Checking an error if login is busy")
@@ -162,35 +115,24 @@ public class CreateCourierTest {
         String errorMessage = "Этот логин уже используется. Попробуйте другой.";
         // Создать одного пользователя
         CreateCourier createCourier = new CreateCourier("ViktorL","12345","Viktor");
-        given()
-                .header("Content-type", "application/json")
-                .and().body(createCourier)
-                .when().post("/api/v1/courier");
-
+        Response createFirstCourierRequest = CreateCourier.createCourierRequest(createCourier);
         // Создать второго с таким же логином
-        Response response =
-                 given()
-                        .header("Content-type", "application/json")
-                        .and().body(new CreateCourier("ViktorL","12345","Viktor"))
-                        .when().post("/api/v1/courier");
-
+        Response createSameFirstCourierRequest = CreateCourier.createCourierRequest(createCourier);
         // Получить ошибку
-        response.then().assertThat().body("message",equalTo(errorMessage));
+        createSameFirstCourierRequest.then().assertThat().body("message",equalTo(errorMessage));
     }
 
     @After
     public void deleteUser(){
-        LogInCourier logInCourier = new LogInCourier("ViktorL","12345");
+        Response logInCourierWithoutLoginPasswordRequest = LogInCourier.logInRequest
+                (new LogInCourier("ViktorL","12345"));
 
-        Id id  =
-                given()
-                        .header("Content-type", "application/json")
-                        .body(logInCourier)
-                        .post("/api/v1/courier/login")
-                        .body().as(Id.class);
+        Id id  = logInCourierWithoutLoginPasswordRequest.body().as(Id.class);
 
         given()
                 .header("Content-type", "application/json")
                 .delete("/api/v1/courier/" + id.getId());
     }
 }
+
+

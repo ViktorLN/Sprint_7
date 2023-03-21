@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3464e677-affb-425d-a070-5f152d083105" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/CreateCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CreateCourier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CreateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/GetListOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GetListOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/LogInCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LogInCourier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GetListOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GetListOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LogInCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogInCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2023-03-19T02-34-59_581.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateCourierTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateCourierTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GetListOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GetListOrderTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/LogInCourierTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCourierTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCourierTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GetListOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GetListOrderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-LogInCourierTest.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,24 +57,24 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/victo/IdeaProjects/hello-world",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/victo/IdeaProjects/Sprint_7&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean test" />
       <command value="mvn clean" />
+      <command value="mvn clean test" />
     </option>
   </component>
   <component name="RunManager" selected="JUnit.All in Sprint_7">
@@ -71,10 +86,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetListOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_7" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GetListOrderTest" />
+      <option name="MAIN_CLASS_NAME" value="CreateOrderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,11 +114,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogInCourierTest.checkAllRequiredFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LogInCourierTest.checkLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_7" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LogInCourierTest" />
-      <option name="METHOD_NAME" value="checkAllRequiredFields" />
+      <option name="METHOD_NAME" value="checkLogin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,10 +127,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Sprint_7" />
-        <item itemvalue="JUnit.LogInCourierTest" />
-        <item itemvalue="JUnit.LogInCourierTest.checkAllRequiredFields" />
         <item itemvalue="JUnit.GetListOrderTest.checkBodyContainListOfOrder" />
-        <item itemvalue="JUnit.GetListOrderTest" />
+        <item itemvalue="JUnit.CreateOrderTest" />
+        <item itemvalue="JUnit.LogInCourierTest" />
+        <item itemvalue="JUnit.LogInCourierTest.checkLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +143,10 @@
       <option name="presentableId" value="Default" />
       <updated>1678896336630</updated>
       <workItem from="1678896337851" duration="10960000" />
-      <workItem from="1678974468505" duration="50190000" />
+      <workItem from="1678974468505" duration="51880000" />
+      <workItem from="1679244133153" duration="388000" />
+      <workItem from="1679244941944" duration="187000" />
+      <workItem from="1679412752797" duration="9021000" />
     </task>
     <servers />
   </component>

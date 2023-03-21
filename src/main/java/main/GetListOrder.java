@@ -2,8 +2,11 @@ package main;
 
 import auxiliary.Orders;
 import auxiliary.PageInfo;
+import io.restassured.response.Response;
 
 import java.util.List;
+
+import static io.restassured.RestAssured.given;
 
 public class GetListOrder {
 
@@ -31,16 +34,9 @@ public class GetListOrder {
         this.pageInfo = pageInfo;
     }
 
-    /*
-
-
-    public List<AvailableStations> getAvailableStations() {
-        return availableStations;
+    public static Response getListOrderRequest(){
+        return given()
+                .header("Content-type", "application/json")
+                .when().get("/api/v1/orders");
     }
-
-    public void setAvailableStations(List<AvailableStations> availableStations) {
-        this.availableStations = availableStations;
-    }
-
-     */
 }

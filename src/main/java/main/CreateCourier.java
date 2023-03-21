@@ -1,5 +1,9 @@
 package main;
 
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
 public class CreateCourier {
 
     private String login;
@@ -39,4 +43,10 @@ public class CreateCourier {
         this.firstName = firstName;
     }
 
+    public static Response createCourierRequest(CreateCourier createCourier){
+        return given()
+                .header("Content-type", "application/json")
+                .and().body(createCourier)
+                .when().post("/api/v1/courier");
+    }
 }

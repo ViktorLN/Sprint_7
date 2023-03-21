@@ -1,13 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: CreateCourierTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 27.236 s <<< FAILURE! - in CreateCourierTest
-checkErrorWhenOneFieldIsNull(CreateCourierTest)  Time elapsed: 1.442 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-JSON path message doesn't match.
-Expected: Недостаточно данных для создания учетной записи
-  Actual: Этот логин уже используется. Попробуйте другой.
-
-	at CreateCourierTest.checkErrorWhenOneFieldIsNull(CreateCourierTest.java:154)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.968 s - in CreateCourierTest

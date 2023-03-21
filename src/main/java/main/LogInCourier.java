@@ -1,5 +1,9 @@
 package main;
 
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
 public class LogInCourier {
 
     private String login;
@@ -27,5 +31,12 @@ public class LogInCourier {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public static Response logInRequest (LogInCourier logInCourier){
+        return given()
+                .header("Content-type", "application/json")
+                .and().body(logInCourier)
+                .when().post("/api/v1/courier/login");
     }
 }
