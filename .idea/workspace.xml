@@ -6,24 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3464e677-affb-425d-a070-5f152d083105" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/CreateCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CreateCourier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CreateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/GetListOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GetListOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/LogInCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LogInCourier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateCourierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GetListOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GetListOrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LogInCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogInCourierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2023-03-19T02-34-59_581.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateCourierTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateCourierTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GetListOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GetListOrderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/LogInCourierTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCourierTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCourierTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GetListOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GetListOrderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-LogInCourierTest.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +128,7 @@
       <workItem from="1678974468505" duration="51880000" />
       <workItem from="1679244133153" duration="388000" />
       <workItem from="1679244941944" duration="187000" />
-      <workItem from="1679412752797" duration="9021000" />
+      <workItem from="1679412752797" duration="9535000" />
     </task>
     <servers />
   </component>
